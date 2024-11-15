@@ -21,4 +21,11 @@ En modifiant les arguments d'optimisation du compilateur, on remarque que le com
 padding entre les éléments du tableau.
 
 ### Question 3 : Mesure de Performance Finale
+
+On remarque les performances augmentent de manière significative en ajoutant du padding de plus de 64 octets entre les
+éléments du tableau. En effet, en ajoutant 64 octets de padding, on obtient une amélioration de 100 fois les
+performances. En effet la taille d'une ligne de cache sur mon CPU est de 64 octets, donc en ajoutant 64 octets de
+padding
+entre les éléments du tableau, on s'assure que chaque élément est stocké dans une ligne de cache différente, ce qui
+permet d'éviter les coûts de synchronisation cachés.
 ![alt text](./execution_times.png)
